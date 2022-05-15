@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Capstone_Final/hanseohelper_muso/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1875" />
+        <entry key="..\:/Capstone_Final/hanseohelper_muso/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1875" />
+        <entry key="..\:/Capstone_Final/hanseohelper_muso/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1875" />
+        <entry key="..\:/Capstone_Final/hanseohelper_muso/app/src/main/res/font/bebas_neue.xml" value="0.1" />
+        <entry key="..\:/Capstone_Final/hanseohelper_muso/app/src/main/res/font/mogra.xml" value="0.1" />
         <entry key="..\:/Capstone_Final/hanseohelper_muso/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Capstone_Final/hanseohelper_muso/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Capstone_Final/hanseohelper_muso/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Capstone_Final/hanseohelper_muso/app/src/main/res/layout/activity_start.xml" value="0.14130434782608695" />
       </map>

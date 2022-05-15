@@ -35,10 +35,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toEndOf="@+id/btn_register"
-        app:layout_constraintTop_toBottomOf="@+id/edit_pw" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_pw_register" />
 
     <EditText
-        android:id="@+id/edit_email"
+        android:id="@+id/edit_email_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
@@ -52,7 +52,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_pw"
+        android:id="@+id/edit_pw_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_email"
+        app:layout_constraintTop_toBottomOf="@+id/edit_email_register"
         app:layout_constraintVertical_bias="0.037" />
 
     <Button
@@ -82,6 +82,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_login"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_pw" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_pw_register" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
