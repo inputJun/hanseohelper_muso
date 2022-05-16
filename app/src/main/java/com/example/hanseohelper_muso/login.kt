@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 
-import android.content.Intent // intent를 사용하려면 넣어야 함
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*  // 자동으로 추가 됨
+import android.content.Intent as Intent1
 
 
 class login : AppCompatActivity() {
@@ -22,14 +22,14 @@ class login : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         btn_register.setOnClickListener {
-            val intent = Intent(this, register::class.java)
+            val intent = Intent1(this, register::class.java)
             startActivity(intent)
         }
 
         btn_login.setOnClickListener {
             val emailEditText = findViewById<EditText>(R.id.edit_email_register)
             val emailsub = emailEditText.text.toString()
-            val domain = "@hanseo.ac.kr"
+            val domain = "@naver.com"
             val email = emailsub + domain
 
             val passwordEditText = findViewById<EditText>(R.id.edit_pw_register)
@@ -61,7 +61,8 @@ class login : AppCompatActivity() {
 
     fun moveMainPage(user: FirebaseUser?) {
         if(user != null) {
-            startActivity(Intent(this, main::class.java))
+            val intent = Intent1(this, main::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    tools:context=".request">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="서비스 선택"
+                android:textSize="30dp"
+                android:textStyle="bold"/>
+            <RadioGroup
+                android:id="@+id/data_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="택배/장보기" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="청소 / 집안일" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="벌레 잡기" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="공부 알려주기(과외)" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="반려동물 케어" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기타 etc" />
+            </RadioGroup>
+            <TextView
+                android:id="@+id/data_theme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="제목"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:paddingTop="30dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="제목을 입력해주세요." />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결제 방법"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:paddingTop="30dp"/>
+            <RadioGroup
+                android:id="@+id/data_pay_method"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="서비스 후 계좌이체" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="만나서 현금 지불" />
+            </RadioGroup>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="주소"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:paddingTop="30dp" />
+            <EditText
+                android:id="@+id/data_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="주소를 입력해주세요." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="선호 성별"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:paddingTop="30dp" />
+
+            <RadioGroup
+                android:id="@+id/data_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="남성"
+                    android:layout_weight="1"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="여성"
+                    android:layout_weight="1"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="성별 무관"
+                    android:layout_weight="1"/>
+            </RadioGroup>
+            <TextView
+                android:id="@+id/data_pay_bill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="심부름비"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:paddingTop="30dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="금액을 입력해주세요."
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/data_request_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="요청 사항"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:paddingTop="30dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="요청 사항을 입력해주세요."
+                android:inputType="textLongMessage"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="요청하기"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/btn1"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

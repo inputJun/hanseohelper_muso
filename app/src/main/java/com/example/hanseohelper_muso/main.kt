@@ -1,25 +1,35 @@
 package com.example.hanseohelper_muso
 
+import android.Manifest
+import android.R
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.location.Location
 import android.os.Bundle
+import android.os.Looper
+import android.util.Log
+import android.view.MenuItem
+import android.view.View
+import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.app.ActivityCompat.startActivityForResult
+import androidx.core.content.ContextCompat
+import com.example.hanseohelper_muso.databinding.ActivityMainBinding
+import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import android.Manifest
-import android.annotation.SuppressLint
-import android.content.pm.PackageManager
-import android.content.pm.PackageManager.PERMISSION_GRANTED
-import android.location.Location
-import android.os.Looper
-import android.util.Log
-import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import com.google.android.gms.location.*
-import com.google.android.gms.maps.model.CameraPosition
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.activity_start.*
+
 
 class main : AppCompatActivity(), OnMapReadyCallback {
 
@@ -33,12 +43,39 @@ class main : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.imageButton10.setOnClickListener {
+            val popup = PopupMenu(this, it)
+            menuInflater.inflate(com.example.hanseohelper_muso.R.menu.popup, popup.menu)
+            popup.setOnMenuItemClickListener {
+                when (it.itemId) {
+                    com.example.hanseohelper_muso.R.id.popup_menu1 -> {
+                        val intent = Intent(this, myinfo::class.java)
+                        startActivity(intent)
+                    }
+                    com.example.hanseohelper_muso.R.id.popup_menu2 -> {
+                        val intent = Intent(this, myrequest::class.java)
+                        startActivity(intent)
+                    }
+                    com.example.hanseohelper_muso.R.id.popup_menu3 -> {
+                        val intent = Intent(this, myoffer::class.java)
+                        startActivity(intent)
+                    }
+                }
+                return@setOnMenuItemClickListener true
+            }
+            popup.show()
+        }
 
         if (isPermitted()) {
             startProcess()
         } else {
             ActivityCompat.requestPermissions(this, permissions, PERM_FLAG)
+        }
+        button.setOnClickListener {
+            val intent = Intent(this, request::class.java)
+            startActivity(intent)
         }
     }
 
@@ -53,7 +90,7 @@ class main : AppCompatActivity(), OnMapReadyCallback {
 
     fun startProcess() {
         val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
+            .findFragmentById(com.example.hanseohelper_muso.R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
 
@@ -134,5 +171,14 @@ class main : AppCompatActivity(), OnMapReadyCallback {
             }
 
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id: Int = item.getItemId()
+        val intent = Intent(this, request::class.java)
+        //intent.putExtra("data", "test data");
+        startActivityForResult(intent, 1)
+        return true
+        return super.onOptionsItemSelected(item)
     }
 }
