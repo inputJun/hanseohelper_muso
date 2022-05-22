@@ -46,6 +46,9 @@
             android:name=".request"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity
+            android:name=".myinfo"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity
             android:name=".start"
             android:exported="true">
             <intent-filter>
