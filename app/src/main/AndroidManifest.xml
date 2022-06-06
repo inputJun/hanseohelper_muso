@@ -43,6 +43,9 @@
             android:name=".login"
             android:exported="false" />
         <activity
+            android:name=".list"
+            android:exported="false" />
+        <activity
             android:name=".request"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity

@@ -35,15 +35,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toEndOf="@+id/btn_register"
-        app:layout_constraintTop_toBottomOf="@+id/edit_pw_register" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_pw_login" />
 
     <EditText
-        android:id="@+id/edit_email_register"
+        android:id="@+id/edit_email_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
         android:ems="10"
-        android:hint="ID"
+        android:hint="학번"
         android:inputType="textEmailAddress"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +52,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_pw_register"
+        android:id="@+id/edit_pw_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_email_register"
+        app:layout_constraintTop_toBottomOf="@+id/edit_email_login"
         app:layout_constraintVertical_bias="0.037" />
 
     <Button
@@ -82,6 +82,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_login"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_pw_register" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_pw_login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="140dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton10"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton10">
 
         <TextView
             android:id="@+id/textView5"
@@ -59,7 +61,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton10">
+            app:layout_constraintTop_toBottomOf="@+id/btn_list">
 
             <LinearLayout
                 android:layout_width="60dp"
@@ -70,65 +72,77 @@
                     android:id="@+id/all_service"
                     android:layout_width="60dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:layout_marginRight="20dp"
+                    android:layout_weight="1"
                     android:src="@android:drawable/ic_menu_myplaces" />
 
                 <ImageView
                     android:id="@+id/post_service"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:src="@drawable/post"/>
+                    android:layout_weight="1"
+                    android:src="@drawable/post" />
 
                 <ImageView
                     android:id="@+id/clean_service"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:src="@drawable/clean"/>
+                    android:layout_weight="1"
+                    android:src="@drawable/clean" />
 
                 <ImageView
                     android:id="@+id/bug_service"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:src="@drawable/bug"/>
+                    android:layout_weight="1"
+                    android:src="@drawable/bug" />
 
                 <ImageView
                     android:id="@+id/study_service"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:src="@drawable/study"/>
+                    android:layout_weight="1"
+                    android:src="@drawable/study" />
 
                 <ImageView
                     android:id="@+id/pet_service"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:src="@drawable/pet"/>
+                    android:layout_weight="1"
+                    android:src="@drawable/pet" />
 
                 <ImageView
                     android:id="@+id/etc_service"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:src="@drawable/etcicon"/>
+                    android:layout_weight="1"
+                    android:src="@drawable/etcicon" />
             </LinearLayout>
         </HorizontalScrollView>
+
+        <ImageView
+            android:id="@+id/btn_list"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView2"
+            app:layout_constraintEnd_toStartOf="@+id/textView5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -45,6 +45,7 @@ class main : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         imageButton10.setOnClickListener {
             var popup = PopupMenu(this, it)
             menuInflater.inflate(com.example.hanseohelper_muso.R.menu.popup, popup.menu)
@@ -70,10 +71,19 @@ class main : AppCompatActivity(), OnMapReadyCallback {
         } else {
             ActivityCompat.requestPermissions(this, permissions, PERM_FLAG)
         }
+
+        btn_list.setOnClickListener{
+            val intent = Intent(this, list::class.java)
+            startActivity(intent)
+        }
+
         button.setOnClickListener {
             val intent = Intent(this, request::class.java)
             startActivity(intent)
         }
+
+
+
     }
 
     fun isPermitted(): Boolean {

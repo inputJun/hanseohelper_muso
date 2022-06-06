@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*  // 자동으로 추가 됨
-import android.content.Intent as Intent1
+import android.content.Intent
 
 
 class login : AppCompatActivity() {
@@ -22,17 +22,17 @@ class login : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         btn_register.setOnClickListener {
-            val intent = Intent1(this, register::class.java)
+            val intent = Intent(this, register::class.java)
             startActivity(intent)
         }
 
         btn_login.setOnClickListener {
-            val emailEditText = findViewById<EditText>(R.id.edit_email_register)
+            val emailEditText = findViewById<EditText>(R.id.edit_email_login)
             val emailsub = emailEditText.text.toString()
             val domain = "@naver.com"
             val email = emailsub + domain
 
-            val passwordEditText = findViewById<EditText>(R.id.edit_pw_register)
+            val passwordEditText = findViewById<EditText>(R.id.edit_pw_login)
             val password = passwordEditText.text.toString()
 
             signIn(email, password)
@@ -61,7 +61,8 @@ class login : AppCompatActivity() {
 
     fun moveMainPage(user: FirebaseUser?) {
         if(user != null) {
-            val intent = Intent1(this, main::class.java)
+            val intent = Intent(this, main::class.java)
+            intent.putExtra("ID", (findViewById<EditText>(R.id.edit_email_login)).text.toString())
             startActivity(intent)
         }
     }
