@@ -38,76 +38,80 @@ class request : AppCompatActivity() {
                 // 의뢰제목
                 val theme = data_title.text.toString()
                 databaseReference.child("Request").child(theme)
+                databaseReference.child("Request").child(theme).child("reqTheme").setValue(theme)
 
                 // 의뢰 서비스
                 if(service1.isChecked) {
                     val service = findViewById<RadioButton>(R.id.service1).text.toString()
-                    databaseReference.child("Request").child(theme).child("service").setValue(service)
+                    databaseReference.child("Request").child(theme).child("reqCategory").setValue(service)
+                    databaseReference.child("Request").child(theme).child("reqImage").setValue("https://firebasestorage.googleapis.com/v0/b/hanseo-helper.appspot.com/o/post.png?alt=media&token=5dfb87fe-68bd-4b4d-b719-dd1a213ee207")
+
                 }
                 if(service2.isChecked) {
                     val service = findViewById<RadioButton>(R.id.service2).text.toString()
-                    databaseReference.child("Request").child(theme).child("service").setValue(service)
+                    databaseReference.child("Request").child(theme).child("reqCategory").setValue(service)
+                    databaseReference.child("Request").child(theme).child("reqImage").setValue("https://firebasestorage.googleapis.com/v0/b/hanseo-helper.appspot.com/o/clean.png?alt=media&token=e30c8c50-cd19-4eaf-88d4-0c62bee52eb8")
                 }
                 if(service3.isChecked) {
                     val service = findViewById<RadioButton>(R.id.service3).text.toString()
-                    databaseReference.child("Request").child(theme).child("service").setValue(service)
+                    databaseReference.child("Request").child(theme).child("reqCategory").setValue(service)
+                    databaseReference.child("Request").child(theme).child("reqImage").setValue("https://firebasestorage.googleapis.com/v0/b/hanseo-helper.appspot.com/o/bug.png?alt=media&token=21435887-77a6-4743-9787-27a2bc0e9e29")
                 }
                 if(service4.isChecked) {
                     val service = findViewById<RadioButton>(R.id.service4).text.toString()
-                    databaseReference.child("Request").child(theme).child("service").setValue(service)
-                }
-                if(service4.isChecked) {
-                    val service = findViewById<RadioButton>(R.id.service4).text.toString()
-                    databaseReference.child("Request").child(theme).child("service").setValue(service)
+                    databaseReference.child("Request").child(theme).child("reqCategory").setValue(service)
+                    databaseReference.child("Request").child(theme).child("reqImage").setValue("https://firebasestorage.googleapis.com/v0/b/hanseo-helper.appspot.com/o/study.png?alt=media&token=ca758a5e-aabd-4856-b725-4df14a08bb89")
                 }
                 if(service5.isChecked) {
                     val service = findViewById<RadioButton>(R.id.service5).text.toString()
-                    databaseReference.child("Request").child(theme).child("service").setValue(service)
+                    databaseReference.child("Request").child(theme).child("reqCategory").setValue(service)
+                    databaseReference.child("Request").child(theme).child("reqImage").setValue("https://firebasestorage.googleapis.com/v0/b/hanseo-helper.appspot.com/o/pet.png?alt=media&token=ad4e8a59-09fb-49fa-9ea0-87d9ff367f48")
                 }
                 if(service6.isChecked) {
                     val service = findViewById<RadioButton>(R.id.service6).text.toString()
-                    databaseReference.child("Request").child(theme).child("service").setValue(service)
+                    databaseReference.child("Request").child(theme).child("reqCategory").setValue(service)
+                    databaseReference.child("Request").child(theme).child("reqImage").setValue("https://firebasestorage.googleapis.com/v0/b/hanseo-helper.appspot.com/o/etcicon.png?alt=media&token=096a6db2-801b-481c-9836-935281013dac")
                 }
 
                 // 의뢰 결제방법
                 if(pay1.isChecked) {
                     val pay_method = findViewById<RadioButton>(R.id.pay1).text.toString()
-                    databaseReference.child("Request").child(theme).child("pay_method").setValue(pay_method)
+                    databaseReference.child("Request").child(theme).child("reqPayMethod").setValue(pay_method)
                 }
                 if(pay2.isChecked) {
                     val pay_method = findViewById<RadioButton>(R.id.pay2).text.toString()
-                    databaseReference.child("Request").child(theme).child("pay_method").setValue(pay_method)
+                    databaseReference.child("Request").child(theme).child("reqPayMethod").setValue(pay_method)
                 }
 
                 // 의뢰 주소
                 val address = data_address.text.toString()
-                databaseReference.child("Request").child(theme).child("address").setValue(address)
+                databaseReference.child("Request").child(theme).child("reqAddress").setValue(address)
 
                 // 의뢰 원하는 성별
                 if(gender1.isChecked) {
                     val gender = findViewById<RadioButton>(R.id.gender1).text.toString()
-                    databaseReference.child("Request").child(theme).child("gender").setValue(gender)
+                    databaseReference.child("Request").child(theme).child("reqGender").setValue(gender)
                 }
                 if(gender2.isChecked) {
                     val gender = findViewById<RadioButton>(R.id.gender2).text.toString()
-                    databaseReference.child("Request").child(theme).child("gender").setValue(gender)
+                    databaseReference.child("Request").child(theme).child("reqGender").setValue(gender)
                 }
                 if(gender3.isChecked) {
                     val gender = findViewById<RadioButton>(R.id.gender3).text.toString()
-                    databaseReference.child("Request").child(theme).child("gender").setValue(gender)
+                    databaseReference.child("Request").child(theme).child("reqGender").setValue(gender)
                 }
 
                 // 의뢰비
                 val pay_bill = data_pay_bill.text.toString()
-                databaseReference.child("Request").child(theme).child("pay_bill").setValue(pay_bill)
+                databaseReference.child("Request").child(theme).child("reqPay").setValue(pay_bill)
 
                 // 의뢰 요청사항
                 val request_message = data_request_message.text.toString()
-                databaseReference.child("Request").child(theme).child("request_message").setValue(request_message)
+                databaseReference.child("Request").child(theme).child("reqMessage").setValue(request_message)
 
                 // 의뢰한 사람 ID(학번) 받아오기
                 val intent_id_request = intent.extras?.getString("ID")
-                databaseReference.child("Request").child(theme).child("who").setValue(intent_id_request)
+                databaseReference.child("Request").child(theme).child("reqWho").setValue(intent_id_request)
 
                 // account에 저장할 의뢰제목
                 if (intent_id_request != null) {

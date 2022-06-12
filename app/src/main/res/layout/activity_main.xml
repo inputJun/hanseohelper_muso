@@ -51,6 +51,18 @@
             app:tint="#000000"
             tools:ignore="SpeakableTextPresentCheck" />
 
+        <ImageView
+            android:id="@+id/btn_list"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView2"
+            app:layout_constraintEnd_toStartOf="@+id/textView5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+
         <HorizontalScrollView
             android:id="@+id/horizontalScrollView2"
             android:layout_width="0dp"
@@ -132,17 +144,6 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-        <ImageView
-            android:id="@+id/btn_list"
-            android:layout_width="40dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView2"
-            app:layout_constraintEnd_toStartOf="@+id/textView5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

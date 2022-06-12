@@ -6,6 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.animation.AnimationUtils
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -16,6 +17,9 @@ class start : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
+
+        val anim = AnimationUtils.loadAnimation(this, R.anim.animation)
+        logostart.startAnimation(anim)    // 로고에 애니메이션 효과 추가
 
         logostart.setOnClickListener {
             showSettingPopup()

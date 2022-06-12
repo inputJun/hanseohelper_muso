@@ -72,7 +72,8 @@ class main : AppCompatActivity(), OnMapReadyCallback {
             ActivityCompat.requestPermissions(this, permissions, PERM_FLAG)
         }
 
-        btn_list.setOnClickListener{
+
+        btn_list.setOnClickListener {
             val intent = Intent(this, list::class.java)
             startActivity(intent)
         }
@@ -81,8 +82,6 @@ class main : AppCompatActivity(), OnMapReadyCallback {
             val intent = Intent(this, request::class.java)
             startActivity(intent)
         }
-
-
 
     }
 
