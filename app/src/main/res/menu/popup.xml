@@ -5,8 +5,8 @@
         android:title="나의 정보" />
     <item
         android:id="@+id/popup_menu2"
-        android:title="나의 의뢰내역" />
+        android:title="나의 의뢰인" />
     <item
         android:id="@+id/popup_menu3"
-        android:title="나의 제공내역" />
+        android:title="나의 서비스" />
 </menu>

@@ -18,50 +18,55 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginBottom="70dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="85dp"
             android:fontFamily="@font/mogra"
             android:text="HanseoHelper"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="28sp"
+            android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton10"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_myinfo_main"
+            app:layout_constraintStart_toEndOf="@+id/btn_list_main"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.219" />
+            app:layout_constraintVertical_bias="0.107" />
 
         <ImageButton
-            android:id="@+id/imageButton10"
-            android:layout_width="35dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="11dp"
+            android:id="@+id/btn_myinfo_main"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="70dp"
             android:background="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView2"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/textView5"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.141"
+            app:layout_constraintVertical_bias="0.166"
             app:srcCompat="@drawable/ic_baseline_person_24"
             app:tint="#000000"
             tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/btn_list"
-            android:layout_width="40dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView2"
+        <ImageButton
+            android:id="@+id/btn_list_main"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="65dp"
+            android:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+            app:layout_constraintVertical_bias="0.17"
+            app:srcCompat="@drawable/ic_baseline_list_alt_24"
+            app:tint="#000000"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <HorizontalScrollView
             android:id="@+id/horizontalScrollView2"
@@ -73,7 +78,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_list">
+            app:layout_constraintTop_toBottomOf="@+id/btn_list_main">
 
             <LinearLayout
                 android:layout_width="60dp"

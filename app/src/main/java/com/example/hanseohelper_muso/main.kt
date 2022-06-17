@@ -46,7 +46,9 @@ class main : AppCompatActivity(), OnMapReadyCallback {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        imageButton10.setOnClickListener {
+        val intent_id_main = intent.extras?.getString("ID")
+
+        binding.btnMyinfoMain.setOnClickListener {
             var popup = PopupMenu(this, it)
             menuInflater.inflate(com.example.hanseohelper_muso.R.menu.popup, popup.menu)
 
@@ -54,14 +56,21 @@ class main : AppCompatActivity(), OnMapReadyCallback {
                 when (it?.itemId) {
                     com.example.hanseohelper_muso.R.id.popup_menu1 -> {
                         val intent = Intent(this, myinfo::class.java)
+                        intent.putExtra("ID",intent_id_main)
                         startActivity(intent)
                     }
                     com.example.hanseohelper_muso.R.id.popup_menu2 -> {
+                        val intent = Intent(this, myclient::class.java)
+                        intent.putExtra("ID",intent_id_main)
+                        startActivity(intent)
                     }
                     com.example.hanseohelper_muso.R.id.popup_menu3 -> {
+                        val intent = Intent(this, myservice::class.java)
+                        intent.putExtra("ID",intent_id_main)
+                        startActivity(intent)
                     }
                 }
-                true
+                return@setOnMenuItemClickListener true
             }
             popup.show()
         }
@@ -73,7 +82,7 @@ class main : AppCompatActivity(), OnMapReadyCallback {
         }
 
 
-        btn_list.setOnClickListener {
+        btn_list_main.setOnClickListener {
             val intent = Intent(this, list::class.java)
             startActivity(intent)
         }

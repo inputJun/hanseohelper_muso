@@ -27,10 +27,10 @@ class request : AppCompatActivity() {
         layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND
         layoutParams.dimAmount = 0.5f
         window.attributes = layoutParams
-        setContentView(com.example.hanseohelper_muso.R.layout.activity_request)
+        setContentView(R.layout.activity_request)
 
         //확인버튼 이벤트
-        val button_ok: Button = findViewById<View>(com.example.hanseohelper_muso.R.id.btn1) as Button
+        val button_ok: Button = findViewById<View>(R.id.btn1) as Button
         button_ok.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View?) {
                 //데이터 전달하고 액티비티 닫기

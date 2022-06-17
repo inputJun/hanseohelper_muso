@@ -55,6 +55,10 @@ class register : AppCompatActivity() {
         val phoneEditText = findViewById<EditText>(R.id.edit_phone_register)
         val phone = phoneEditText.text.toString()
 
+        val score : Double =3.0
+        val scorenumber : Int =0
+        val report : Int =0
+
         // 비밀번호
         val passwordEditText = findViewById<EditText>(R.id.edit_pw_register)
         val password = passwordEditText.text.toString()
@@ -80,6 +84,9 @@ class register : AppCompatActivity() {
                             databaseReference.child("Account").child(studentnumber).child("StudentNumber").setValue(studentnumber)
                             databaseReference.child("Account").child(studentnumber).child("Password").setValue(password)
                             databaseReference.child("Account").child(studentnumber).child("Phone").setValue(phone)
+                            databaseReference.child("Account").child(studentnumber).child("Score").setValue(score)
+                            databaseReference.child("Account").child(studentnumber).child("Scorenumber").setValue(scorenumber)
+                            databaseReference.child("Account").child(studentnumber).child("Report").setValue(report)
 
                             val intent = Intent(this@register, login::class.java)
                             startActivity(intent)
