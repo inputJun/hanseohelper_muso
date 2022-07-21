@@ -47,6 +47,7 @@ class main : AppCompatActivity(), OnMapReadyCallback {
         setContentView(binding.root)
 
         val intent_id_main = intent.extras?.getString("ID")
+        intent.putExtra("ID",intent_id_main)
 
         binding.btnMyinfoMain.setOnClickListener {
             var popup = PopupMenu(this, it)
@@ -84,11 +85,13 @@ class main : AppCompatActivity(), OnMapReadyCallback {
 
         btn_list_main.setOnClickListener {
             val intent = Intent(this, list::class.java)
+            intent.putExtra("ID",intent_id_main)
             startActivity(intent)
         }
 
-        button.setOnClickListener {
+        btn_request.setOnClickListener {
             val intent = Intent(this, request::class.java)
+            intent.putExtra("ID",intent_id_main)
             startActivity(intent)
         }
 

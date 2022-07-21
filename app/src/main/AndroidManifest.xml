@@ -17,12 +17,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hanseohelper_muso">
         <activity
+            android:name=".requestapply"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/popupTheme"/>
+        <activity
             android:name=".score"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/popupTheme"/>
         <activity
-            android:name=".report"
+            android:name=".report_myservice"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/popupTheme" />
+        <activity
+            android:name=".report_myclient"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/popupTheme" />
@@ -70,6 +80,9 @@
             android:exported="false" />
         <activity
             android:name=".list"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
             android:exported="false" />
         <activity
             android:name=".request"

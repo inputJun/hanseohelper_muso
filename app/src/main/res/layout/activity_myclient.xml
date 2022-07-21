@@ -7,8 +7,8 @@
     tools:context=".myclient">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="300dp"
-        android:layout_height="320dp"
+        android:layout_width="308dp"
+        android:layout_height="450dp"
         android:background="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,8 +17,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.325">
 
+        <fragment
+            android:id="@+id/map3"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="278dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myclientProfile"
+            tools:context=".MapsActivity" />
+
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/myclientProfile"
             android:layout_width="43dp"
             android:layout_height="41dp"
             android:layout_marginStart="16dp"
@@ -37,48 +51,63 @@
             android:textAlignment="viewStart"
             android:textColor="#FFFFFF"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintBottom_toBottomOf="@+id/myclientProfile"
+            app:layout_constraintStart_toEndOf="@+id/myclientProfile"
             app:layout_constraintTop_toBottomOf="@+id/name_myclient"
             app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/service_myclient"
-            android:layout_width="wrap_content"
-            android:layout_height="16dp"
-            android:text="서비스 구분"
-            android:textColor="@color/white"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/title_myclient"
-            app:layout_constraintTop_toBottomOf="@+id/title_myclient" />
 
         <TextView
             android:id="@+id/title_myclient"
             android:layout_width="130dp"
             android:layout_height="32dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="12dp"
             android:text="TextView"
             android:textAlignment="viewStart"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/studentnumber_myclient" />
+            app:layout_constraintTop_toBottomOf="@+id/map3" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="의뢰비 : "
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/service_myclient" />
 
         <TextView
             android:id="@+id/pay_bill_myclient"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="18dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
             android:text="의뢰비"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/textView18"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+            app:layout_constraintTop_toBottomOf="@+id/service_myclient" />
+
+        <TextView
+            android:id="@+id/pay_method_myclient"
+            android:layout_width="0dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="4dp"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/pay_bill_myclient"
+            app:layout_constraintTop_toBottomOf="@+id/service_myclient" />
 
         <TextView
             android:id="@+id/textView12"
@@ -95,20 +124,36 @@
             app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
         <TextView
-            android:id="@+id/textView18"
-            android:layout_width="wrap_content"
-            android:layout_height="18dp"
+            android:id="@+id/request_message_myclient"
+            android:layout_width="265dp"
+            android:layout_height="35dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="의뢰비 : "
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="4dp"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/service_myclient"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="서비스 구분"
             android:textColor="@color/white"
             android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/service_myclient" />
+            app:layout_constraintTop_toBottomOf="@+id/title_myclient" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/score_myservice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -121,48 +166,6 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
         <TextView
-            android:id="@+id/textView11"
-            android:layout_width="80dp"
-            android:layout_height="16dp"
-            android:text="의뢰 시간"
-            android:textAlignment="viewEnd"
-            android:textColor="#FFFFFF"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="@+id/service_myclient"
-            app:layout_constraintEnd_toEndOf="@+id/title_myclient"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/service_myclient"
-            app:layout_constraintTop_toBottomOf="@+id/title_myclient"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/request_message_myclient"
-            android:layout_width="265dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="20dp"
-            android:text="TextView"
-            android:textColor="#FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-        <TextView
-            android:id="@+id/pay_method_myclient"
-            android:layout_width="wrap_content"
-            android:layout_height="18dp"
-            android:layout_marginTop="16dp"
-            android:text="TextView"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/pay_bill_myclient"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-        <TextView
             android:id="@+id/name_myclient"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
@@ -172,7 +175,7 @@
             android:textColor="@color/white"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/myclientProfile"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -190,7 +193,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="나의 의뢰인"
+                android:text="나의 해드려요"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="30sp"
@@ -205,7 +208,7 @@
                 android:id="@+id/bt_chat_myclient"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="8dp"
                 android:background="@color/gray"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
@@ -221,7 +224,7 @@
                 android:id="@+id/bt_report_myclient"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:backgroundTint="@color/gray"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -36,7 +36,7 @@ class login : AppCompatActivity() {
         btn_login.setOnClickListener {
             val emailEditText = findViewById<EditText>(R.id.edit_email_login)
             val emailsub = emailEditText.text.toString()
-            val domain = "@naver.com"
+            val domain = "@office.hanseo.ac.kr"
             val email = emailsub + domain
 
             val passwordEditText = findViewById<EditText>(R.id.edit_pw_login)

@@ -8,7 +8,7 @@
     android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:background="@color/gray"
-    tools:context=".request">
+    tools:context=".myinfo">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -69,49 +69,37 @@
                     app:tint="@color/white" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:text="이름"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/profile"
+                android:layout_width="43dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                android:scaleType="fitCenter"
+                tools:srcCompat="@drawable/ic_default_profile" />
 
             <TextView
                 android:id="@+id/name_myinfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="*이름 데이터 출력*"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="-40dp"
+                android:text="이름"
                 android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginTop="18dp"
-                android:background="#FFFF" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="학번"
-                android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="14dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/studentnumber_myinfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
                 android:layout_marginTop="5dp"
-                android:text="*학번 데이터 출력*"
+                android:text="학번"
                 android:textColor="@color/white"
-                android:textSize="20dp"
+                android:textSize="12dp"
                 android:textStyle="bold" />
 
             <View

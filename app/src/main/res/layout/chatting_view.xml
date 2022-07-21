@@ -9,7 +9,7 @@
     android:padding="5dp">
 
     <TextView
-        android:id="@+id/chatting_msg"
+        android:id="@+id/my_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -26,16 +26,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/chatting_time"
+        android:id="@+id/my_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/chatting_msg"
-        android:layout_toLeftOf="@+id/chatting_msg"
+        android:layout_alignBottom="@+id/my_msg"
+        android:layout_toLeftOf="@+id/my_msg"
         android:text="00:00"
         android:textSize="12sp"
         android:textColor="#556677"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/chatting_msg"
+        app:layout_constraintEnd_toStartOf="@id/my_msg"
         app:layout_constraintHorizontal_bias="0.974"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

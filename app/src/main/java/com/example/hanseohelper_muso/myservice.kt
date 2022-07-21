@@ -2,6 +2,9 @@ package com.example.hanseohelper_muso
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -32,56 +35,143 @@ class myservice : AppCompatActivity() {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
 
-
                 // 의뢰 이름
-                val requestname =
-                    intent_id_myservice?.let { dataSnapshot.child("Account").child(it).child("Request").getValue().toString() }
-                title_myservice.setText(requestname)
+                val requestnumber =
+                    intent_id_myservice?.let {
+                        dataSnapshot.child("Account").child(it).child("Requestnumber").getValue()
+                            .toString().toInt()
+                    }
 
-                // 의뢰자 이름
-                val name =
-                    intent_id_myservice?.let { dataSnapshot.child("Account").child(it).child("Name").getValue().toString() }
-                name_myservice.setText(name)
+                val connectednumber =
+                    intent_id_myservice?.let {
+                        dataSnapshot.child("Account").child(it).child("Connectednumber").getValue()
+                            .toString().toInt()
+                    }
 
-                // 의뢰자 학번
-                val studentnumber =
-                    requestname?.let { dataSnapshot.child("Request").child(it).child("reqWho").getValue().toString() }
-                studentnumber_myservice.setText(studentnumber)
+                if (requestnumber == 0 || connectednumber == 0) {
+                    request_message_myservice.setText("")
+                    name_myservice.setText("")
+                    studentnumber_myservice.setText("")
+                    title_myservice.setText("")
+                    service_myservice.setText("")
+                    pay_bill_myservice.setText("")
+                    pay_method_myservice.setText("")
+                    score_myservice.setText("")
+                    textView11.setText("")
+                    textView12.setText("")
+                    textView18.setText("")
+                    btn_complete.setVisibility(View.INVISIBLE)
+                } else {
+                    textView10.setText("")
 
-                // 의뢰한 곳 주소
-                val address =
-                    requestname?.let { dataSnapshot.child("Request").child(it).child("reqAddress").getValue().toString() }
-                address_myservice.setText(address)
+                    val requestname =
+                        intent_id_myservice?.let {
+                            dataSnapshot.child("Account").child(it).child("Request").getValue()
+                                .toString()
+                        }
+                    title_myservice.setText(requestname)
 
-                // 의뢰 서비스 구분
-                val service =
-                    requestname?.let { dataSnapshot.child("Request").child(it).child("reqCategory").getValue().toString() }
-                service_myservice.setText(service)
+                    val id =
+                        requestname?.let {
+                            dataSnapshot.child("ConnectedRequest").child(it).child("accWho")
+                                .getValue().toString()
+                        }
 
-                // 의뢰비
-                val pay_bill =
-                    requestname?.let { dataSnapshot.child("Request").child(it).child("reqPay").getValue().toString() }
-                val pay_bill2 = pay_bill + " 원 "
-                pay_bill_myservice.setText(pay_bill2)
 
-                // 의뢰 지불 방식
-                val pay_method =
-                    requestname?.let { dataSnapshot.child("Request").child(it).child("reqPayMethod").getValue().toString() }
-                val pay_method2 = "(" + pay_method + ")"
-                pay_method_myservice.setText(pay_method2)
+                    val studentnumber =
+                        id?.let {
+                            dataSnapshot.child("Account").child(it).child("StudentNumber")
+                                .getValue().toString()
+                        }
+                    studentnumber_myservice.setText(studentnumber)
 
-                // 의뢰 요청사항
-                val request_message =
-                    requestname?.let { dataSnapshot.child("Request").child(it).child("reqMessage").getValue().toString() }
-                val request_message2 = " - " + request_message
-                request_message_myservice.setText(request_message2)
+                    val name =
+                        id?.let {
+                            dataSnapshot.child("Account").child(it).child("Name").getValue()
+                                .toString()
+                        }
+                    name_myservice.setText(name)
 
+                    val score =
+                        id?.let {
+                            dataSnapshot.child("Account").child(it).child("Score").getValue()
+                                .toString()
+                        }
+                    score_myservice.setText(score)
+
+                    val paymethod =
+                        requestname?.let {
+                            dataSnapshot.child("ConnectedRequest").child(it).child("reqPayMethod")
+                                .getValue().toString()
+                        }
+                    pay_method_myservice.setText(paymethod)
+
+                    val pay =
+                        requestname?.let {
+                            dataSnapshot.child("ConnectedRequest").child(it).child("reqPay")
+                                .getValue().toString()
+                        }
+                    pay_bill_myservice.setText(pay)
+
+                    val message =
+                        requestname?.let {
+                            dataSnapshot.child("ConnectedRequest").child(it).child("reqMessage")
+                                .getValue().toString()
+                        }
+                    request_message_myservice.setText(message)
+
+                    val category =
+                        requestname?.let {
+                            dataSnapshot.child("ConnectedRequest").child(it).child("reqCategory")
+                                .getValue().toString()
+                        }
+                    service_myservice.setText(category)
+
+                    btn_complete.setOnClickListener {
+                        AlertDialog.Builder(this@myservice).run {
+                            setTitle("완료 확인")
+                            setIcon(android.R.drawable.ic_dialog_alert)
+                            setMessage("상대방이 의뢰를 완료하였나요?")
+                            setPositiveButton("네") { dialog, which ->
+
+                                if (id != null) {
+                                    databaseReference.child("Account").child(id).child("Acceptrequest").removeValue()
+                                    databaseReference.child("Account").child(id).child("Connectednumber").setValue(0)
+                                }
+
+                                if (intent_id_myservice != null) {
+                                    databaseReference.child("Account").child(intent_id_myservice).child("Request").removeValue()
+                                    databaseReference.child("Account").child(intent_id_myservice).child("Connectednumber").setValue(0)
+                                }
+
+                                if (requestname != null) {
+                                    databaseReference.child("ConnectedRequest").child(requestname).removeValue()
+                                    databaseReference.child("CompletedRequest").child(requestname).child("accWho").setValue(id)
+                                    databaseReference.child("CompletedRequest").child(requestname).child("reqWho").setValue(intent_id_myservice)
+                                    databaseReference.child("CompletedRequest").child(requestname).child("reqCategory").setValue(category)
+                                    databaseReference.child("CompletedRequest").child(requestname).child("reqPay").setValue(pay)
+                                    databaseReference.child("CompletedRequest").child(requestname).child("reqPayMethod").setValue(paymethod)
+                                    databaseReference.child("CompletedRequest").child(requestname).child("reqMessage").setValue(message)
+                                }
+
+                                Toast.makeText(this@myservice, "의뢰 완료처리되었습니다.", Toast.LENGTH_LONG).show()
+                                val intent = Intent(this@myservice, main::class.java)
+                                intent.putExtra("ID",intent_id_myservice)
+                                startActivity(intent)
+
+                            }
+                            setNeutralButton("아니오", null)
+                            show()
+                        }
+                    }
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {
                 // Failed to read value
 
             }
+
         })
 
     }

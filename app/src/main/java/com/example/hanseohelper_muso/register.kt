@@ -48,7 +48,7 @@ class register : AppCompatActivity() {
         val emailEditText = findViewById<EditText>(R.id.edit_email_register)
         val emailsub = emailEditText.text.toString()
         val studentnumber = emailsub
-        val domain = "@naver.com"
+        val domain = "@office.hanseo.ac.kr"
         val email = emailsub+domain
 
         // 전화번호
@@ -87,6 +87,8 @@ class register : AppCompatActivity() {
                             databaseReference.child("Account").child(studentnumber).child("Score").setValue(score)
                             databaseReference.child("Account").child(studentnumber).child("Scorenumber").setValue(scorenumber)
                             databaseReference.child("Account").child(studentnumber).child("Report").setValue(report)
+                            databaseReference.child("Account").child(studentnumber).child("Requestnumber").setValue(0)
+                            databaseReference.child("Account").child(studentnumber).child("Connectednumber").setValue(0)
 
                             val intent = Intent(this@register, login::class.java)
                             startActivity(intent)

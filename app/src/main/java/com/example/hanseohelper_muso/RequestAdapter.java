@@ -1,6 +1,8 @@
 package com.example.hanseohelper_muso;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,12 +39,33 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.CustomVi
 
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
+
         Glide.with(holder.itemView)
                 .load(arrayList.get(position).getReqImage())
                 .into(holder.iv_category);
         holder.tv_category.setText(arrayList.get(position).getReqCategory());
         holder.tv_theme.setText(arrayList.get(position).getReqTheme());
         holder.tv_pay.setText(arrayList.get(position).getReqPay() + "원");
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() { // 추가한 부분
+            @Override
+            public void onClick(View view) {
+
+                String theme = holder.tv_theme.getText().toString(); //holder로 가져온 값을 변수에 넣기
+
+                Intent intent2 = ((Activity) context).getIntent();
+                String id = intent2.getStringExtra("ID");
+
+                Intent intent;//인텐트 선언
+                intent = new Intent(context, requestapply.class); //requestapply.class부분에 원하는 화면 연결
+                intent.putExtra("ID",id);
+                intent.putExtra("theme", theme); //변수값 인텐트로 넘기기
+                context.startActivity(intent); //액티비티 열기
+
+            } // 추가한부분
+
+        });
+
     }
 
     @Override
